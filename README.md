@@ -26,13 +26,13 @@
 
 Name of feature: API
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30 minitues
 
-Start time: _____
+Start time: 8:30
 
-Finish time: _____
+Finish time: 9:15
 
-Actual time needed to complete: _____
+Actual time needed to complete: 45 minitues
 
 Name of feature: Locations
 
