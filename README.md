@@ -36,13 +36,13 @@ Actual time needed to complete: 45 minitues
 
 Name of feature: Locations
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 2 hours
 
-Start time: _____
+Start time: 9:30
 
-Finish time: _____
+Finish time: Incomplete
 
-Actual time needed to complete: _____
+Actual time needed to complete: Unknown
 
 Name of feature: Maps
 
