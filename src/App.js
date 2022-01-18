@@ -14,6 +14,7 @@ class App extends React.Component {
 
   getLoco = async e => {
     e.preventDefault();
+    
 
     let API = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_ACCESS_TOKEN}&q=${this.state.searchQuery}&format=json`;
 
@@ -24,6 +25,7 @@ class App extends React.Component {
       locoData: locoResults.data[0],
       showMapAndCityInfo: true
     })
+  
   }
 
 
@@ -47,8 +49,8 @@ class App extends React.Component {
             this.state.showMapAndCityInfo &&
             <article>
               <h3>{this.state.locoData.display_name}</h3>
-              <img src='https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_ACCESS_TOKEN}&zoom=10&center=${this.state.locoData.lat},${this.state.locoData.lon}' alt="map results" />
-              <p>Latitude: {this.state.locoData.lat} Longitude: {this.state.locoData.long}</p>
+              <img src= {`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_ACCESS_TOKEN}&zoom=10&center=${this.state.locoData.lat},${this.state.locoData.lon}`} alt="map results" />
+              <p>Latitude: {this.state.locoData.lat} Longitude: {this.state.locoData.lon}</p>
             </article>
           }
         </main>
