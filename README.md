@@ -1,6 +1,6 @@
-# Project Name
+# City Explorer
 
-**Author**: Your Name Goes Here
+**Author**: Regan Hayes
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
@@ -22,17 +22,21 @@
 
 ***
 
+![image](wrrc.png)
+
+***
+
 ### January 17, 2022
 
 Name of feature: API
 
-Estimate of time needed to complete: 30 minitues
+Estimate of time needed to complete: 30 minutes
 
 Start time: 8:30
 
 Finish time: 9:15
 
-Actual time needed to complete: 45 minitues
+Actual time needed to complete: 45 minutes
 
 Name of feature: Locations
 
