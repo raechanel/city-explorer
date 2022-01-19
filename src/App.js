@@ -18,9 +18,9 @@ class App extends React.Component {
     e.preventDefault();
     
     try {
-      let API = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_ACCESS_TOKEN}&q=${this.state.searchQuery}&format=json`;
+      let apiUrl = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_ACCESS_TOKEN}&q=${this.state.searchQuery}&format=json`;
 
-      let locoResults = await axios.get(API)
+      let locoResults = await axios.get(apiUrl)
       console.log(locoResults.data)
       
       this.setState({
