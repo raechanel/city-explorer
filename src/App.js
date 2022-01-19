@@ -6,7 +6,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchQuery: '',
-      showMapAndCityInfo: false
+      showMapAndCityInfo: false,
+      renderError: false,
+      errorMessage: ''
     }
   }
 
@@ -15,17 +17,23 @@ class App extends React.Component {
   getLoco = async e => {
     e.preventDefault();
     
+    try {
+      let API = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_ACCESS_TOKEN}&q=${this.state.searchQuery}&format=json`;
 
-    let API = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_ACCESS_TOKEN}&q=${this.state.searchQuery}&format=json`;
-
-
-    let locoResults = await axios.get(API)
-    console.log(locoResults.data)
-    this.setState({
-      locoData: locoResults.data[0],
-      showMapAndCityInfo: true
-    })
-  
+      let locoResults = await axios.get(API)
+      console.log(locoResults.data)
+      
+      this.setState({
+        locoData: locoResults.data[0],
+        showMapAndCityInfo: true
+      })
+    } catch(error) {
+      this.setState ({
+        renderError: true, 
+        errorMessage: `Error: ${error.response.status}, ${error.response.data.error}`
+      })
+    }
+      
   }
 
 
@@ -40,11 +48,11 @@ class App extends React.Component {
         <main>
           <form onSubmit={this.getLoco}>
             <label>Enter a City!
-              <input type="text" onInput={this.handleInput} />
+              <input type="text" onInput={this.handleInput} placeholder= "Ex. Trenton 📍" />
             </label>
             <button>Explore!</button>
           </form>
-
+          <h3>{this.state.errorMessage}</h3>
           {
             this.state.showMapAndCityInfo &&
             <article>
