@@ -54,8 +54,8 @@ Name of feature: Server
 
 Estimate of time needed to complete: 4 hours
 
-Start time: 5:12
+Start time: 5:12pm
 
-Finish time: 6:56
+Finish time: 6:56pm
 
 Actual time needed to complete: 2 hours
