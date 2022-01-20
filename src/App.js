@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Weather from './Weather.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +9,11 @@ class App extends React.Component {
       searchQuery: '',
       showMapAndCityInfo: false,
       renderError: false,
-      errorMessage: ''
+      errorMessage: '',
+      locoData: {},
+      latitude: '',
+      longitude: '',
+      weatherData: []
     }
   }
 
@@ -27,16 +32,30 @@ class App extends React.Component {
         locoData: locoResults.data[0],
         showMapAndCityInfo: true
       })
+      console.log(this.state.locoData);
     } catch(error) {
       this.setState ({
         renderError: true, 
         errorMessage: `Error: ${error.response.status}, ${error.response.data.error}`
       })
     }
-      
+     this.getWeather(this.state.locoData.lat, this.state.locoData.lon); 
   }
 
+  getWeather = async (lat, lon) => {
+    try {
+      let weatherApi = await axios.get(`${process.env.REACT_APP_SERVER}/weather`, { params: {latitude: lat, longitude: lon, searchQuery: this.state.searchQuery}})
 
+      this.setState({
+        weatherData: weatherApi.data,
+      })
+    } catch(error) {
+      this.setState({
+        renderError: true,
+        errorMessage: `Error: ${error.response.status}, ${error.response.data.error}`
+      })
+    }
+  }
 
   render() {
     console.log(this.state)
@@ -61,6 +80,9 @@ class App extends React.Component {
               <p>Latitude: {this.state.locoData.lat} Longitude: {this.state.locoData.lon}</p>
             </article>
           }
+          <Weather 
+           weather={this.state.weatherData}
+          />
         </main>
       </>
     );
