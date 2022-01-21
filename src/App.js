@@ -28,13 +28,11 @@ class App extends React.Component {
       let apiUrl = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_ACCESS_TOKEN}&q=${this.state.searchQuery}&format=json`;
 
       let locoResults = await axios.get(apiUrl)
-      console.log(locoResults.data)
-
+      
       this.setState({
         locoData: locoResults.data[0],
         showMapAndCityInfo: true
       })
-      console.log(this.state.locoData);
     } catch (error) {
       this.setState({
         renderError: true,
@@ -42,6 +40,7 @@ class App extends React.Component {
       })
     }
     this.getWeather(this.state.locoData.lat, this.state.locoData.lon);
+    this.getMovies();
   }
 
   getWeather = async (lat, lon) => {
@@ -51,6 +50,7 @@ class App extends React.Component {
       this.setState({
         weatherData: weatherApi.data,
       })
+      console.log(this.state.weatherData);
     } catch (error) {
       this.setState({
         renderError: true,
@@ -61,11 +61,12 @@ class App extends React.Component {
 
   getMovies = async () => {
     try {
-      let movieApi = await axios.get(`${process.env.REACT_APP_SERVER}/movies?location=${this.state.searchQuery}`)
+      let movieApi = await axios.get(`${process.env.REACT_APP_SERVER}/movie?searchQuery=${this.state.searchQuery}`)
 
       this.setState({
         movieData: movieApi.data,
       })
+      console.log(this.state.movieData);
     } catch (error) {
       this.setState({
         renderError: true,

@@ -4,10 +4,10 @@ class Movies extends React.Component {
 
   render() {
     return (
-      this.props.movies.map (idx => (
+      this.props.movies.map ((movie, idx) => (
         <div key={idx}>
-          <p>{this.title}</p>
-          <p>{this.genre}</p>
+          <p>{movie.title}</p>
+          <p>{movie.overview}</p>
         </div>
       ))
     )
