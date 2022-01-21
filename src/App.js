@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Weather from './Weather.js'
+import Movies from './Movies.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class App extends React.Component {
       locoData: {},
       latitude: '',
       longitude: '',
-      weatherData: []
+      weatherData: [],
+      movieData: [],
     }
   }
 
@@ -21,44 +23,59 @@ class App extends React.Component {
 
   getLoco = async e => {
     e.preventDefault();
-    
+
     try {
       let apiUrl = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_ACCESS_TOKEN}&q=${this.state.searchQuery}&format=json`;
 
       let locoResults = await axios.get(apiUrl)
-      console.log(locoResults.data)
       
       this.setState({
         locoData: locoResults.data[0],
         showMapAndCityInfo: true
       })
-      console.log(this.state.locoData);
-    } catch(error) {
-      this.setState ({
-        renderError: true, 
-        errorMessage: `Error: ${error.response.status}, ${error.response.data.error}`
-      })
-    }
-     this.getWeather(this.state.locoData.lat, this.state.locoData.lon); 
-  }
-
-  getWeather = async (lat, lon) => {
-    try {
-      let weatherApi = await axios.get(`${process.env.REACT_APP_SERVER}/weather`, { params: {latitude: lat, longitude: lon, searchQuery: this.state.searchQuery}})
-
-      this.setState({
-        weatherData: weatherApi.data,
-      })
-    } catch(error) {
+    } catch (error) {
       this.setState({
         renderError: true,
         errorMessage: `Error: ${error.response.status}, ${error.response.data.error}`
       })
     }
+    this.getWeather(this.state.locoData.lat, this.state.locoData.lon);
+    this.getMovies();
+  }
+
+  getWeather = async (lat, lon) => {
+    try {
+      let weatherApi = await axios.get(`${process.env.REACT_APP_SERVER}/weather`, { params: { lat: lat, lon: lon, searchQuery: this.state.searchQuery } })
+
+      this.setState({
+        weatherData: weatherApi.data,
+      })
+      console.log(this.state.weatherData);
+    } catch (error) {
+      this.setState({
+        renderError: true,
+        errorMessage: 'Unable to connect to server'
+      })
+    }
+  }
+
+  getMovies = async () => {
+    try {
+      let movieApi = await axios.get(`${process.env.REACT_APP_SERVER}/movie?searchQuery=${this.state.searchQuery}`)
+
+      this.setState({
+        movieData: movieApi.data,
+      })
+      console.log(this.state.movieData);
+    } catch (error) {
+      this.setState({
+        renderError: true,
+        errorMessage: 'Unable to connect to server'
+      })
+    }
   }
 
   render() {
-    console.log(this.state)
     return (
       <>
         <header>
@@ -67,7 +84,7 @@ class App extends React.Component {
         <main>
           <form onSubmit={this.getLoco}>
             <label>Enter a City!
-              <input type="text" onInput={this.handleInput} placeholder= "Ex. Trenton 📍" />
+              <input type="text" onInput={this.handleInput} placeholder="Ex. Trenton 📍" />
             </label>
             <button>Explore!</button>
           </form>
@@ -76,12 +93,15 @@ class App extends React.Component {
             this.state.showMapAndCityInfo &&
             <article>
               <h3>{this.state.locoData.display_name}</h3>
-              <img src= {`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_ACCESS_TOKEN}&zoom=10&center=${this.state.locoData.lat},${this.state.locoData.lon}`} alt="map results" />
+              <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_ACCESS_TOKEN}&zoom=10&center=${this.state.locoData.lat},${this.state.locoData.lon}`} alt="map results" />
               <p>Latitude: {this.state.locoData.lat} Longitude: {this.state.locoData.lon}</p>
             </article>
           }
-          <Weather 
-           weather={this.state.weatherData}
+          <Weather
+            weather={this.state.weatherData}
+          />
+          <Movies
+            movies={this.state.movieData}
           />
         </main>
       </>
