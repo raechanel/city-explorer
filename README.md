@@ -40,9 +40,9 @@ Name of feature: Locations
 
 Estimate of time needed to complete: 3 hours
 
-Start time: 9:30
+Start time: 9:30pm
 
-Finish time: 11:30
+Finish time: 11:30pm
 
 Actual time needed to complete: 2 hours
 
