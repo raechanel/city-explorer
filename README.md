@@ -1,6 +1,9 @@
 # City Explorer
 
 **Author**: Regan Hayes
+
+**Deployed Link:*** <https://app.netlify.com/sites/pedantic-shirley-183014/overview>
+
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
@@ -13,6 +16,7 @@
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
 ## Change Log
+
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
@@ -50,12 +54,22 @@ Actual time needed to complete: 2 hours
 
 ![image](./public/wrrc-lab2.png)
 
-Name of feature: Server
+Name of feature: Server Set Up
 
-Estimate of time needed to complete: 4 hours
+Estimate of time needed to complete: 1 hour
 
-Start time: 5:12pm
+Start time: 8:00
 
-Finish time: 6:56pm
+Finish time: 30 minutes
 
-Actual time needed to complete: 2 hours
+Actual time needed to complete: 8:30
+
+Name of feature: Weather PlaceHolder
+
+Estimate of time needed to complete: 2 hour
+
+Start time: 5:30
+
+Finish time: 1 hour 30 minutes
+
+Actual time needed to complete: 6:58
