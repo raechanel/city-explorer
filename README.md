@@ -38,44 +38,24 @@ Actual time needed to complete: 45 minutes
 
 Name of feature: Locations
 
-Estimate of time needed to complete: 2 hours
+Estimate of time needed to complete: 3 hours
 
-Start time: 9:30
+Start time: 9:30pm
 
-Finish time: Incomplete
+Finish time: 11:30pm
 
-Actual time needed to complete: Unknown
-
-Name of feature: Maps
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
-
-Name of feature: Errors
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
+Actual time needed to complete: 2 hours
 
 ### January 18, 2022
 
 ![image](./public/wrrc-lab2.png)
 
-Name of feature: Maps
+Name of feature: Server
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 4 hours
 
-Start time: _____
+Start time: 5:12pm
 
-Finish time: _____
+Finish time: 6:56pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 2 hours
