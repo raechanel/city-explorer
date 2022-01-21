@@ -44,7 +44,7 @@ class App extends React.Component {
 
   getWeather = async (lat, lon) => {
     try {
-      let weatherApi = await axios.get(`${process.env.REACT_APP_SERVER}/weather`, { params: {latitude: lat, longitude: lon, searchQuery: this.state.searchQuery}})
+      let weatherApi = await axios.get(`${process.env.REACT_APP_SERVER}/weather`, { params: {lat: lat, lon: lon, searchQuery: this.state.searchQuery}})
 
       this.setState({
         weatherData: weatherApi.data,
@@ -52,7 +52,7 @@ class App extends React.Component {
     } catch(error) {
       this.setState({
         renderError: true,
-        errorMessage: `Error: ${error.response.status}, ${error.response.data.error}`
+        errorMessage: 'Unable to connect to server'
       })
     }
   }
