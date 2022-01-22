@@ -7,7 +7,9 @@ class Movies extends React.Component {
       this.props.movies.map ((movie, idx) => (
         <div key={idx}>
           <p>{movie.title}</p>
+          <img src={movie.imageUrl} alt={movie.title}></img>
           <p>{movie.overview}</p>
+          <p>{movie.releaseDate}</p>
         </div>
       ))
     )
