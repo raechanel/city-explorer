@@ -8,8 +8,8 @@ class Weather extends React.Component {
         <div key={idx}>
           <p>{day.date}</p>
           <p>{day.description}</p>
-          <p>{day.dayHigh}</p>
-          <p>{day.dayLow}</p>
+          <p>{day.low}</p>
+          <p>{day.high}</p>
         </div>
       ))
     )
