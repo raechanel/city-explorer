@@ -2,12 +2,13 @@
 
 **Author**: Regan Hayes
 
-**Deployed Link:*** <https://app.netlify.com/sites/pedantic-shirley-183014/overview>
+**Deployed Link:*** <https://pedantic-shirley-183014.netlify.app/>
 
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.0.2
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+This application displays map, and weather based on the city searched.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
@@ -17,26 +18,24 @@
 
 ## Change Log
 
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+01-20-2022 10:16pm - Application now has a fully-functional express server, with a GET route for the location resource.
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+Paired with Chuck Altopiedi for Lab 6 WRRC.
+Paired with Josh McCluskey for Lab 7 WRRC.
+Paired with Shane Roach and Kevin LaMarca for Lab 9 WRRC.
+Paired with Shane Roach for Lab 10 WRRC.
 
 ***
 
-![image](./public/wrrc.png)
+![image](./public/wrrc-1.png)
 
-### January 17, 2022
+### January 17, 2022 - Lab 6
 
-Name of feature: API
+Name of feature: Set-up repo and API
 
 Estimate of time needed to complete: 30 minutes
-
-Start time: 8:30
-
-Finish time: 9:15
 
 Actual time needed to complete: 45 minutes
 
@@ -44,56 +43,86 @@ Name of feature: Locations
 
 Estimate of time needed to complete: 3 hours
 
-Start time: 9:30pm
-
-Finish time: 11:30pm
-
 Actual time needed to complete: 2 hours
 
-### January 18, 2022
+Name of feature: Maps
 
-![image](./public/wrrc-lab2.png)
+Estimate of time needed to complete: 2 hours
 
-Name of feature: Server Set Up
+Actual time needed to complete: 1 hour and 30 minutes
+
+Name of feature: Errors
 
 Estimate of time needed to complete: 1 hour
 
-Start time: 8:00
+Actual time needed to complete: 20 minutes
 
-Finish time: 30 minutes
+### January 18, 2022 - Lab 7
 
-Actual time needed to complete: 8:30
+![image](./public/wrrc-2.png)
+
+Name of feature: Server Set-Up
+
+Estimate of time needed to complete: 1 hour
+
+Actual time needed to complete: 1 hour
 
 Name of feature: Weather PlaceHolder
 
-Estimate of time needed to complete: 2 hour
+Estimate of time needed to complete: 2 hours
 
-Start time: 5:30
+Actual time needed to complete: 1 hour 30 minutes
 
-Finish time: 1 hour 30 minutes
+Name of feature: Errors
 
-Actual time needed to complete: 6:58
+Estimate of time needed to complete: 1 hour
 
-### January 19, 2022
+Actual time needed to complete: 30 minutes
+
+### January 19, 2022 - Lab 8
 
 ![image](./public/wrrc-3.png)
 
 Name of feature: Weather (live)
 
-Estimate of time needed to complete: 2 hour
+Estimate of time needed to complete: 2 hours
 
-Start time: 5:30
-
-Finish time: 1 hour 30 minutes
-
-Actual time needed to complete: 6:58
+Actual time needed to complete: 1 hour 15 minutes
 
 Name of feature: Movies
 
-Estimate of time needed to complete: 2 hour
+Estimate of time needed to complete: 2 hours
 
-Start time: 5:30
+Actual time needed to complete: 1 hour and 45 minutes
 
-Finish time: 1 hour 30 minutes
+Name of feature: Publish/Deploy
 
-Actual time needed to complete: 6:58
+Estimate of time needed to complete: 30 minutes
+
+Actual time needed to complete: 45 minutes
+
+### January 20, 2022 - Lab 9
+
+![image](./public/wrrc-4.png)
+
+Name of feature: Modularize Back-end
+
+Estimate of time needed to complete: 30 minutes
+
+Actual time needed to complete: 30 minutes
+
+Name of feature: Refactor Front-end
+
+Estimate of time needed to complete:
+
+Actual time needed to complete:
+
+### January 21, 2022 - Lab 10
+
+![image](./public/wrrc-5.png)
+
+Name of feature: Cache
+
+Estimate of time needed to complete:
+
+Actual time needed to complete:
