@@ -13,7 +13,6 @@ class Weather extends React.Component {
         ))}
       </ListGroup>
     )
-
   }
 }
 export default Weather;
